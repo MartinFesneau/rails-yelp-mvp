@@ -1,0 +1,16 @@
+<div class="container">
+<%= link_to 'back to list', restaurants_path  %>
+  <h2><%= @restaurant.name %></h2>
+  <h3><%= @restaurant.category %></h3>
+  <p><i class="fas fa-phone"> <%= @restaurant.phone_number %></i></p>
+  <p><i class="fas fa-map-marked"> <%= @restaurant.address %></i></p>
+  <hr>
+  <h3>Reviews</h3>
+  <%= link_to 'add review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary'%>
+  <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+  <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+  </ul>
+</div>
+
